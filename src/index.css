@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    * {
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    /* body {
+        overflow: hidden;
+    } */
+
+    @font-face {
+        font-family: "Monseratt";
+        src: url(../public/fonts/Montserrat-Regular.ttf);
+    }
+    @font-face {
+        font-family: "Inter";
+        src: url(../public/fonts/Inter_18pt-Regular.ttf);
+    }
+}
+
+.overflow-x-scroll::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
