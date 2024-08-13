@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       spacing: {
+        '6px':'6px',
         '11p':'11px',
         '3.25':'13px',
         '4.5':'15px',
@@ -27,6 +28,8 @@ export default {
         inter: ['Inter']
       },
       fontSize:{
+        '7':'7px',
+        '8':'8px',
         '10':'10px',
         '11':'11px'
       },
@@ -42,6 +45,9 @@ export default {
       },
       boxShadow: {
         'button':'0px 4px 4px 0px #00000040'
+      },
+      lineHeight: {
+        '9.6':'9.6px'
       }
     },
     colors: {
@@ -50,7 +56,7 @@ export default {
       'white':'rgba(255, 255, 255, 1)',
       'dark':'rgba(23, 23, 23, 1)',
       'light_grey2':'rgba(23, 23, 23, 0.2)',
-      'light_grey4':'rgba(23, 23, 23, 1)',
+      'light_grey4':'rgba(23, 23, 23, 0.4)',
       'translucent_brick':'rgba(208, 120, 82, 0.4)',
       'brick':'#D07852',
       'img_bg': 'rgba(0, 0, 0, 0.2)'

@@ -3,5 +3,6 @@ export default interface Master {
     "name":string,
     "specialization":string,
     "hidden": number,
-    "avatar_big":string
+    "avatar_big":string,
+    "weight":string
 }
