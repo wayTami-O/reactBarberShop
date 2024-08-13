@@ -5,7 +5,7 @@ import BackgroundComponent from '../../components/Background';
 function NotesPage() {
     return ( 
         <>
-            <Header active={"записи"}/>
+            <Header active={"Мои записи"}/>
             <div className="">notes</div>
             <Link to="/">back</Link>
             <BackgroundComponent />
