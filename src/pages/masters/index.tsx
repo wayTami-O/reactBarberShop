@@ -3,6 +3,7 @@ import BackgroundComponent from '../../components/Background';
 import axios from 'axios';
 import Masters from '../../types/Masters';
 import MasterItem from './item';
+import { useSaveMaster } from './saveMaster';
 import { useEffect, useState } from 'react';
 
 const axiosCFG = axios.create({
@@ -18,14 +19,20 @@ function MastersPage() {
 
     const [ master, setMaster ] = useState<string>('');
 
+    const setNewMaster = useSaveMaster((state) => state.setMaster)
+    const masterId = useSaveMaster((state) => state.masterId)
+
     const handleMaster = (newMaster: string) => {
+        console.log(newMaster);
         setMaster(newMaster)
+        setNewMaster(newMaster.toString())
     }
 
     const [data, setData] = useState<Masters[]>([]);
 
     useEffect(() => {
         axiosCFG.get('').then(({data}) => {
+            console.log(data);
             setData(data.data);
         });
     }, []);
@@ -36,7 +43,7 @@ function MastersPage() {
         <h1 className="mx-3.25 mt-5 font-extrabold text-xl leading-6">Мастера</h1>
         <div className="w-full px-3.25 pt-3.25">
             <div className="w-full px-3 pb-5 25 pt-3.25 grid grid-cols-2 gap-x-3 gap-y-3.25">
-                <div className="w-148 h-300 bg-white border-1 border-light_grey2 rounded-55 overflow-hidden shadow-button" onClick={(): void => {handleMaster('0')}}>
+                <div className="w-148 h-300 bg-white border-1 border-light_grey2 rounded-55 overflow-hidden shadow-button relative z-10" onClick={(): void => {handleMaster('0')}}>
                     <div className="w-full h-133 bg-img_bg flex justify-center items-center">
                         <svg width="60" height="38" viewBox="0 0 60 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.5 30C15.5 31.5177 15.6643 32.6762 16.0636 33.5744C16.4539 34.4525 17.0834 35.1149 18.0914 35.6189C19.1172 36.1318 20.5383 36.4817 22.5003 36.6997C24.4577 36.9172 26.9173 37 30 37C33.0827 37 35.5423 36.9172 37.4997 36.6997C39.4617 36.4817 40.8828 36.1318 41.9086 35.6189C42.9166 35.1149 43.5461 34.4525 43.9364 33.5744C44.3357 32.6762 44.5 31.5177 44.5 30C44.5 28.4823 44.3357 27.3238 43.9364 26.4256C43.5461 25.5475 42.9166 24.8851 41.9086 24.3811C40.8828 23.8682 39.4617 23.5183 37.4997 23.3003C35.5423 23.0828 33.0827 23 30 23C26.9173 23 24.4577 23.0828 22.5003 23.3003C20.5383 23.5183 19.1172 23.8682 18.0914 24.3811C17.0834 24.8851 16.4539 25.5475 16.0636 26.4256C15.6643 27.3238 15.5 28.4823 15.5 30Z" stroke="#171717" strokeLinecap="round" strokeLinejoin="round"/>
@@ -49,7 +56,7 @@ function MastersPage() {
                     </div>
                     <div className="w-full px-3.25 pt-3.25 flex justify-between">
                         <h2 className="font-mons text-10 font-medium">Любой специалист</h2>
-                        <div className={`w-4.5 h-4.5 border-1 border-dark rounded-100 flex justify-center items-center ${master == '0' ? 'bg-dark' : ''}`}>
+                        <div className={`w-4.5 h-4.5 border-1 border-dark rounded-100 flex justify-center items-center ${masterId == '0' ? 'bg-dark' : ''}`}>
                             <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 3L3.25 5.25L7.75 0.75" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
@@ -57,7 +64,7 @@ function MastersPage() {
                     </div>
                 </div>
                 {data.map(el => {
-                    if (el.hidden != 1) return <MasterItem key={el.id} master={el} nowMaster={master} setMaster={setMaster} />
+                    if (el.hidden != 1) return <MasterItem key={el.id} master={el} nowMaster={masterId} setMaster={setMaster} />
                 })}
             </div>
         </div>

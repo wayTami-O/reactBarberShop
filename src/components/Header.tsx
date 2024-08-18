@@ -13,12 +13,12 @@ function Header({active}: HeaderProps) {
             link: '/result'
         },
         {
-            text: 'Услуги',
-            link: '/services'
-        },
-        {
             text: 'Мастера',
             link: '/masters'
+        },
+        {
+            text: 'Услуги',
+            link: '/services'
         },
         {
             text: 'Мои записи',
