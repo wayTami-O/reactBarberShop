@@ -1,4 +1,5 @@
 export default interface MasterZus {
+    masterName: string,
     masterId: string,
-    setMaster: (newMaster: string) => void
+    setMaster: (newMaster: string, newMasterName: string) => void
 }
