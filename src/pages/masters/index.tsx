@@ -32,8 +32,7 @@ function MastersPage() {
 
     useEffect(() => {
         axiosCFG.get('').then(({data}) => {
-            console.log(data);
-            setData(data.data);
+            setData(data.data)
         });
     }, []);
 

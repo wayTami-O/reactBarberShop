@@ -4,11 +4,15 @@ export default interface Services {
     "price_max":number,
     "duration": number,
     "image_group": {
-        "images": {
-            "basic":{
-                "path": string
-            }
-        }
+        "images":images
     },
     "comment": string
+}
+
+interface images {
+    basic: basic
+}
+
+interface basic {
+    path: string
 }

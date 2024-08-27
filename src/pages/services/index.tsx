@@ -21,8 +21,6 @@ function ServicesPage() {
 
     const [ services, setServices ] = useState<Services[]>([])
 
-    console.log(services)
-
     useEffect(() => {
         axiosCFG.get(masterId).then(({data}) => {
             setServices(data.data)
@@ -33,7 +31,7 @@ function ServicesPage() {
         <>
             <Header active={"услуги"}/>
             <h1 className="mx-3.25 mt-5 font-extrabold text-xl leading-6">Услуги</h1>
-            <div className="mx-3.25 my-3.25">
+            <div className="mx-3.25 my-3.25 flex flex-col gap-3.25">
                 {services.map(el => {
                     return <ServicesItem key={el.id} service={el} />
                 })}
