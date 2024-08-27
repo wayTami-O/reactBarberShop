@@ -7,8 +7,6 @@ function useToggleServices() {
     const arrayServicesZus = useSaveServices((state) => state.arrayServices);
     const setArrayServices = useSaveServices((state) => state.setArrayServices);
     
-    console.log(arrayServicesZus);
-
     const toggleService = (service: ServicesInfo) => {
         const itemExists = arrayServicesZus.some((i) => i.id === service.id);
 
@@ -18,8 +16,6 @@ function useToggleServices() {
             setArrayServices([...arrayServicesZus, service]);
         }
     }
-
-    console.log(arrayServicesZus);
 
     return { arrayServicesZus, toggleService };
 }

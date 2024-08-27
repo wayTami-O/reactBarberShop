@@ -23,7 +23,6 @@ function MastersPage() {
     const masterId = useSaveMaster((state) => state.masterId)
 
     const handleMaster = (newMaster: string) => {
-        console.log(newMaster);
         setMaster(newMaster)
         setNewMaster(newMaster.toString())
     }
