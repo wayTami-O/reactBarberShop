@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ButtonTypes } from '../../types/ButtonTypes';
 import BackgroundComponent from '../../components/Background';
+import HappyHours from '../../components/HappyHours';
 
 function HomePage() {
     
@@ -31,9 +32,7 @@ function HomePage() {
         <>
             <h1 className="px-3.25 mt-10 w-full h-10 flex justify-center items-center font-extrabold tracking-1.8 text-xl">Дядя барбершоп</h1>
             <div className='px-3.25 mt-5 w-full h-20 flex justify-center items-center relative'>
-                <div className="relative w-full h-full border-1 bg-white border-translucent_brick rounded-100 flex justify-center items-center z-10 shadow-button">
-                    <p className="font-mons font-semibold text-sm">Счастливые часы - 10% скидка.</p>
-                </div>
+                <HappyHours />
                 <div className="absolute w-full h-20 top-3 px-3.5">
                     <div className="w-full h-full bg-brick rounded-100"></div>
                 </div>
