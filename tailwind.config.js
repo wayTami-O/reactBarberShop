@@ -19,6 +19,8 @@ export default {
         '39px':'39px',
         '57':'57.69px',
         '15':'60px',
+        '66':'66px',
+        '68':'68px',
         '73':'73px',
         '76':'76px',
         '102':'102.42px',
@@ -39,7 +41,8 @@ export default {
         '7':'7px',
         '8':'8px',
         '10':'10px',
-        '11':'11px'
+        '11':'11px',
+        '12':'12px'
       },
       letterSpacing: {
         '1.8':'-1.8%'
@@ -50,6 +53,7 @@ export default {
       borderRadius: {
         '100':'100px',
         '55':'55px',
+        '20': '20px',
         '10':'10px'
       },
       boxShadow: {
