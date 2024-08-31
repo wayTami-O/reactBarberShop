@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ButtonTypes } from '../../types/ButtonTypes';
 import BackgroundComponent from '../../components/Background';
 import HappyHours from '../../components/HappyHours';
+import InputNumber from '../../components/InputNumber';
 
 function HomePage() {
     
@@ -54,6 +55,7 @@ function HomePage() {
                 })}
             </div>
             <BackgroundComponent />
+            <InputNumber />
         </>
     );
 }

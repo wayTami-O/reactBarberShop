@@ -5,6 +5,8 @@ import Masters from '../../types/Masters';
 import MasterItem from './item';
 import { useSaveMaster } from './saveMaster';
 import { useEffect, useState } from 'react';
+import { PopupFatherAndSon } from '../../components/HappyHours';
+import MasterSmall from '../../types/MasterSmall';
 
 const axiosCFG = axios.create({
     baseURL:'https://api.yclients.com/api/v1/company/64805/staff',
@@ -22,9 +24,11 @@ function MastersPage() {
     const setNewMaster = useSaveMaster((state) => state.setMaster)
     const masterId = useSaveMaster((state) => state.masterId)
 
+    console.log(masterId);
+
     const handleMaster = (newMaster: string) => {
         setMaster(newMaster)
-        setNewMaster(newMaster.toString())
+        setNewMaster(newMaster)
     }
 
     const [data, setData] = useState<Masters[]>([]);
@@ -39,6 +43,7 @@ function MastersPage() {
     <>
         <Header active={"мастера"}/>
         <h1 className="mx-3.25 mt-5 font-extrabold text-xl leading-6">Мастера</h1>
+        <PopupFatherAndSon />
         <div className="w-full px-3.25 pt-3.25">
             <div className="w-full px-3 pb-5 25 pt-3.25 grid grid-cols-2 gap-x-3 gap-y-3.25">
                 <div className="w-148 h-300 bg-white border-1 border-light_grey2 rounded-55 overflow-hidden shadow-button relative z-10" onClick={(): void => {handleMaster('0')}}>

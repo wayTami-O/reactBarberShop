@@ -4,7 +4,7 @@ function BackgroundComponent() {
             <div className="fixed h-full w-full flex justify-center items-center -z-10">
                 <img src="/public/img/background/bg_barber.png" className="fixed top-15 bg-[url('/public/img/background/bg_barber.png')] bg-no-repeat -z-10" />
             </div>
-            <svg className="fixed top-76 -left-5 opacity-35 flex justify-center items-center" width="80" height="80" viewBox="0 0 42 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="fixed top-100 -left-5 opacity-35 flex justify-center items-center" width="80" height="80" viewBox="0 0 42 77" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.107823 13.8344L13.6101 74.0564M39.2874 52.8011L-17.3527 28.288M17.6754 5.78303C21.1971 10.0374 20.6032 16.3411 16.3488 19.8628C12.0944 23.3845 5.79071 22.7905 2.26902 18.5362C-1.25267 14.2818 -0.658722 7.9781 3.59563 4.45642C7.84999 0.934727 14.1537 1.52867 17.6754 5.78303ZM-13.1374 31.2894C-9.61568 35.5437 -10.2096 41.8474 -14.464 45.3691C-18.7183 48.8908 -25.0221 48.2969 -28.5438 44.0425C-32.0654 39.7882 -31.4715 33.4844 -27.2171 29.9627C-22.9628 26.4411 -16.6591 27.035 -13.1374 31.2894Z" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <svg className="fixed -right-18 top-323 opacity-35" width="80" height="80" viewBox="0 0 40 76" fill="none" xmlns="http://www.w3.org/2000/svg">
