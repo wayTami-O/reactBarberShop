@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Master from '../../types/Masters';
 import { useSaveMaster } from './saveMaster';
 import axios from 'axios';
+import MasterSmall from '../../types/MasterSmall';
 
 const axiosCFG = axios.create({
     baseURL: 'https://api.yclients.com/api/v1/book_times/64805/',
@@ -16,9 +17,13 @@ function MasterItem({master, nowMaster, setMaster}: {master: Master; nowMaster:s
 
     const setNewMaster = useSaveMaster((state) => state.setMaster)
 
-    const handleMaster = (newMaster: string) => {
+    const handleMaster = (newMaster: string, nameMaster: string) => {
         setMaster(newMaster)
-        setNewMaster(newMaster)
+        let item: MasterSmall = {
+            id: newMaster,
+            name: nameMaster
+        } 
+        setNewMaster(item)
     }
 
     const [ workTime, setWorkTime ] = useState<[]>([])
@@ -32,7 +37,7 @@ function MasterItem({master, nowMaster, setMaster}: {master: Master; nowMaster:s
     }, [])
 
     return (
-        <div className="w-148 h-300 bg-white border-1 border-light_grey2 rounded-55 overflow-hidden shadow-button relative z-10" onClick={(): void => {handleMaster(master.id.toString())}}>
+        <div className="w-148 h-300 bg-white border-1 border-light_grey2 rounded-55 overflow-hidden shadow-button relative z-10" onClick={(): void => {handleMaster(master.id.toString(), master.name)}}>
             <img className="w-full h-133" src={master.avatar_big} alt="" />
             <div className="px-3.25 pt-3.25 flex justify-between items-start">
                 <div className="w-fit flex flex-col gap-6px">

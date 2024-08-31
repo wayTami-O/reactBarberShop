@@ -5,5 +5,5 @@ import MasterSmall from '../../types/MasterSmall';
 export const useSaveMaster = create<MasterSuz>((set) => ({
     masterName: '',
     masterId: '',
-    setMaster: (newMaster: string) => set({masterId: newMaster})
+    setMaster: (newMaster: MasterSmall) => set({masterId: newMaster.id, masterName: newMaster.name})
 }))
