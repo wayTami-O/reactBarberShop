@@ -21,6 +21,11 @@
         font-family: "Inter";
         src: url(../public/fonts/Inter_18pt-Regular.ttf);
     }
+
+    .react-datepicker__month-container {
+        position: absolute;
+        left: 10px;
+    }
 }
 
 .overflow-x-scroll::-webkit-scrollbar, .overflow-y-scroll::-webkit-scrollbar {

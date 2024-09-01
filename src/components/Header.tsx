@@ -31,7 +31,7 @@ function Header({active}: HeaderProps) {
     ]
 
     return (
-        <div className="w-full px-3.25 h-15 sticky top-0 z-20 bg-white">
+        <div className="w-full px-3.25 h-15 sticky top-0 z-30 bg-white">
             <div className="w-full h-full border-y-1 border-translucent_brick flex justify-between items-center gap-2.5">
                 <Link to={"/"} >
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
