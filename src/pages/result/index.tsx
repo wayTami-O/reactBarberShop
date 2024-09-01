@@ -88,8 +88,6 @@ function ResultPage() {
 
     const {selectedDate, zusDay, handleDateChange, masterName, daysMaster} = useResultPage()
 
-    console.log(selectedDate);
-
     return (
         <>
             <Header active={"записаться"}/>

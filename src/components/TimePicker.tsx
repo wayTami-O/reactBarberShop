@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useSaveDay } from '../pages/result/saveDay';
+import { useSaveMaster } from '../pages/masters/saveMaster';
 import axios from 'axios';
 
 const axiosCFGTime = axios.create({
-    baseURL:'https://api.yclients.com/api/v1/schedule/64805',
+    baseURL:'https://api.yclients.com/api/v1/book_times/64805',
     headers:{
         "Accept":"application/vnd.yclients.v2+json",
         "Content-Type":"application/json",
@@ -13,11 +14,16 @@ const axiosCFGTime = axios.create({
 
 function TimePicker() {
 
+    const masterId = useSaveMaster((state) => state.masterId)
     const zusDay = useSaveDay((state) => state.day)
-
+    const [day, month, year] = zusDay.split('.');
+    const dataApi = `${year}-${month}-${day}`
+    console.log(dataApi);
     useEffect(() => {
-        
-    },[])
+        axiosCFGTime.get(masterId + "/" + dataApi).then(({data}) => {
+            console.log(data);
+        })
+    },[zusDay])
 
     return (
         <>
