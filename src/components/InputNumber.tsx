@@ -1,6 +1,6 @@
 import { IMaskInput } from 'react-imask';
 import { usePhoneNumber } from './SaveNumber';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 export default function InputNumber() {
 
