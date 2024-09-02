@@ -31,7 +31,7 @@ function HomePage() {
 
     return (
         <>
-            <h1 className="px-3.25 mt-10 w-full h-10 flex justify-center items-center font-extrabold tracking-1.8 text-xl">Дядя барбершоп</h1>
+            <h1 className="px-3.25 mt-10 w-full h-10 flex justify-center items-center font-extrabold tracking-0.8 text-xl">Дядя барбершоп</h1>
             <div className='px-3.25 mt-5 w-full h-20 flex justify-center items-center relative'>
                 <HappyHours />
                 <div className="absolute w-full h-20 top-3 px-3.5">

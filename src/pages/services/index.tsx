@@ -25,9 +25,7 @@ function ServicesPage() {
     useEffect(() => {
         if (masterId !== "") {
             let urlMasterId = "?staff_id=" + masterId
-            console.log(urlMasterId);
             axiosCFG.get(urlMasterId).then(({data}) => {
-                console.log('https://api.yclients.com/api/v1/company/64805/services/?staff_id='+masterId);
                 setServices(data.data)
             })
         } else {

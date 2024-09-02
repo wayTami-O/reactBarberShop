@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useTime } from './TimeSave';
+import { useSaveDay } from '../pages/result/saveDay';
 
 export default function HappyHours() {
     const [popup, setPopup] = useState(true)
@@ -7,11 +9,13 @@ export default function HappyHours() {
         popup ? setPopup(false) : setPopup(true)
     }
 
+
+
     const liText = ["Счастливые часы проходят каждый - Вт, Ср, Чт", 
-    "С 15:00 до 18:00",
-    "В это время вы получаете скидку 10%",
-    "Скидка не действует на стрижку под 1 насадку, оформление бороды, ваксинг, пенсионные стрижки."
-]
+        "С 15:00 до 18:00",
+        "В это время вы получаете скидку 10%",
+        "Скидка не действует на стрижку под 1 насадку, оформление бороды, ваксинг, пенсионные стрижки."
+    ]
 
     return(
         <>
@@ -70,10 +74,17 @@ export function ResultHappyHours() {
     }
 
     const liText = ["Счастливые часы проходят каждый - Вт, Ср, Чт", 
-    "С 15:00 до 18:00",
-    "В это время вы получаете скидку 10%",
-    "Скидка не действует на стрижку под 1 насадку, оформление бороды, ваксинг, пенсионные стрижки."
-]
+        "С 15:00 до 18:00",
+        "В это время вы получаете скидку 10%",
+        "Скидка не действует на стрижку под 1 насадку, оформление бороды, ваксинг, пенсионные стрижки."
+    ]
+
+    const time = useTime((state) => state.time)
+
+    const date = useSaveDay((state) => state.day)
+
+    console.log(time);
+    console.log(date);
 
     return(
         <>

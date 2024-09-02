@@ -87,7 +87,6 @@ function ItemNotes({note}: {note: Notes}) {
                     <div className="w-full flex flex-col gap-1.5">
                         <p className="w-fit font-mons text-14 opacity-60 font-medium leading-18">Услуга/и</p>
                         {note.services.map((el, index) => {
-                            console.log(el);
                             return <p key={index} className="indent-1.5 font-mons text-xs opacity-60 leading-15">{el.title}</p>
                         })}
                     </div>

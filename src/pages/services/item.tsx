@@ -7,6 +7,8 @@ function useToggleServices() {
     const arrayServicesZus = useSaveServices((state) => state.arrayServices);
     const setArrayServices = useSaveServices((state) => state.setArrayServices);
     
+    // console.log(arrayServicesZus);
+
     const toggleService = (service: ServicesInfo) => {
         const itemExists = arrayServicesZus.some((i) => i.id === service.id);
 
@@ -45,7 +47,6 @@ function ServicesItem({service}: {service: Services}) {
     return (
         <>
             <div className="w-full border-1 border-light_grey2 rounded-10 bg-white p-3.25 relative z-10 flex flex-col gap-3.25">
-                {/* Header */}
                 <div className="w-full flex justify-between relative">
                     <div className="w-fit flex flex-col gap-3.25">
                         <h1 className="text-sm font-medium opacity-60">{service.title}</h1>
@@ -66,7 +67,6 @@ function ServicesItem({service}: {service: Services}) {
                         <path d="M8.61729 9.3335L30.2544 31.3354M35.5425 15.5299L5.02142 20.0813M13.9494 1.27562C16.5682 2.15177 17.9808 4.98494 17.1047 7.60369C16.2285 10.2224 13.3953 11.6351 10.7766 10.7589C8.15785 9.88278 6.7452 7.04961 7.62135 4.43086C8.4975 1.81212 11.3307 0.39947 13.9494 1.27562ZM7.60377 20.2422C10.2225 21.1184 11.6352 23.9516 10.759 26.5703C9.88287 29.1891 7.04969 30.6017 4.43095 29.7255C1.81221 28.8494 0.399555 26.0162 1.27571 23.3975C2.15186 20.7787 4.98503 19.3661 7.60377 20.2422Z" stroke="#D07852" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                 </div>
-                {/* Body */}
                 <div className={`w-full h-fit items-start gap-3.25 flex-col ${accordeon ? "flex" : "hidden"}`}>
                     <div className="w-full">
                         <img src={service.image_group?.images?.basic?.path ?? "https://www.google.com/url?sa=i&url=https%3A%2F%2Fjujutsu-kaisen.fandom.com%2Fru%2Fwiki%2F%25D0%25A1%25D0%25B0%25D1%2582%25D0%25BE%25D1%2580%25D1%2583_%25D0%2593%25D0%25BE%25D0%25B4%25D0%25B6%25D0%25BE&psig=AOvVaw16iL3COkPhoiUiwV52BOM8&ust=1724170545603000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjs0Pi5gYgDFQAAAAAdAAAAABAE"} alt="" />

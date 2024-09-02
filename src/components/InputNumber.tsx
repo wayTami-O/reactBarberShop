@@ -10,12 +10,12 @@ export default function InputNumber() {
     const phoneNum = useRef<string>('')
 
     const handleButtonClick = () => {
-        console.log("Введенный номер телефона:", phoneNum.current);
+        // console.log("Введенный номер телефона:", phoneNum.current);
         setPhone(phoneNum.current)
     };
 
     const handleAccept = (value: string) => {
-        console.log('Текущее значение телефона:', value);
+        // console.log('Текущее значение телефона:', value);
         phoneNum.current = value
     };
 
