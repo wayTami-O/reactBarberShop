@@ -6,8 +6,6 @@ import { ServicesInfo } from '../../types/ServicesZustandType';
 function useToggleServices() {
     const arrayServicesZus = useSaveServices((state) => state.arrayServices);
     const setArrayServices = useSaveServices((state) => state.setArrayServices);
-    
-    // console.log(arrayServicesZus);
 
     const toggleService = (service: ServicesInfo) => {
         const itemExists = arrayServicesZus.some((i) => i.id === service.id);

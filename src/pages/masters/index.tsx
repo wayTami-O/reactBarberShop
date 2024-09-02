@@ -19,13 +19,11 @@ const axiosCFG = axios.create({
 
 function MastersPage() {
 
-    const [ master, setMaster ] = useState<string>('');
 
     const setNewMaster = useSaveMaster((state) => state.setMaster)
     const masterId = useSaveMaster((state) => state.masterId)
 
     const handleMaster = (newMaster: string, nameMaster: string) => {
-        setMaster(newMaster)
         let item: MasterSmall = {
             id: newMaster,
             name: nameMaster
@@ -69,7 +67,7 @@ function MastersPage() {
                     </div>
                 </div>
                 {data.map(el => {
-                    if (el.hidden != 1) return <MasterItem key={el.id} master={el} nowMaster={masterId} setMaster={setMaster}/>
+                    if (el.hidden != 1) return <MasterItem key={el.id} master={el} nowMaster={masterId}/>
                 })}
             </div>
         </div>

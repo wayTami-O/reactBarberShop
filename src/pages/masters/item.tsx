@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Master from '../../types/Masters';
 import { useSaveMaster } from './saveMaster';
 import axios from 'axios';
@@ -13,12 +13,11 @@ const axiosCFG = axios.create({
     }
 })
 
-function MasterItem({master, nowMaster, setMaster}: {master: Master; nowMaster:string, setMaster: React.Dispatch<React.SetStateAction<string>>}) {
+function MasterItem({master, nowMaster}: {master: Master; nowMaster:string}) {
 
     const setNewMaster = useSaveMaster((state) => state.setMaster)
 
     const handleMaster = (newMaster: string, nameMaster: string) => {
-        setMaster(newMaster)
         let item: MasterSmall = {
             id: newMaster,
             name: nameMaster

@@ -50,7 +50,7 @@ function useResultPage() {
     useEffect(() => {
         if (masterId != "0") {
             axiosCFGDays.get(masterId + '/' + today.toISOString().slice(0, 10) + '/' + sixMonthsLater.toISOString().slice(0, 10)).then(({data}) => {
-                const newDayMasterStr = data.data.map((el: { date: any; }) => {
+                const newDayMasterStr = data.data.map((el: any) => {
                     if (el.is_working == 1) {
                         return new Date(el.date)
                     }
@@ -91,8 +91,6 @@ function useResultPage() {
 function ResultPage() {
 
     const {selectedDate, zusDay, handleDateChange, masterName, daysMaster, arrayServicesZus} = useResultPage()
-
-
 
     return (
         <>

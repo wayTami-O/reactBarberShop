@@ -27,7 +27,7 @@ function TimePicker() {
     const setTime = useTime((state) => state.setTime)
     const time = useTime((state) => state.time)
 
-    const [accordeon, setAccordeon] = useState<accordeonType>(null)
+    const [accordeon, setAccordeon] = useState<accordeonType | null>(null)
 
     const [freeTime, setFreeTime] = useState<ArrayTime | null>(null)
 
@@ -47,12 +47,12 @@ function TimePicker() {
     const dataApi = `${year}-${month}-${day}`
     useEffect(() => {
         axiosCFGTime.get(masterId + "/" + dataApi).then(({data}) => {
-            const newFreeTime = data.data.map(el => {
+            const newFreeTime = data.data.map((el: any) => {
                 return el
             })
-            const getFreeTime = newFreeTime.reduce((acc, el) => {
+            const getFreeTime = newFreeTime.reduce((acc: any, el: any) => {
                 const time = el.time
-                const [hours, minutes] = time.split(':').map(Number);
+                const [hours] = time.split(':').map(Number);
             
                 if (hours < 12) {
                     return {

@@ -80,7 +80,6 @@ export function ResultHappyHours() {
     ]
 
     const time = useTime((state) => state.time)
-
     const date = useSaveDay((state) => state.day)
 
     console.log(time);
